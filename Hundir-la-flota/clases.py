@@ -21,6 +21,56 @@ class Tablero:
             self.tabla_barcos.append (fila)
             self.tabla_disparos.append (fila2)
     
+       
+    def imprime_tablero (self,selecc):
+        #Uso el mismo método para imprimir los dos tableros dependiendo del parámetro
+        # 1 me imprime el estado de mis barcos
+        # 0 (otro) me imprime donde he disparado
+        if selecc == 1:
+            tablero = self.tabla_barcos
+        else:
+            tablero = self.tabla_disparos
+
+        #os.system('cls')
+
+        # Printa tb una fila de 0 al 9 arriba y el 0 a 9 al principio de la columna para facilitar a donde
+        # disparar
+        print ("   0   1   2   3   4   5   6   7   8   9 ")
+        for i in range (len(tablero)):
+            print (i, end=" ")
+            for j in range (len (tablero[i])):
+                print (f"[{tablero[i][j]}]", end= " ") 
+            print() 
+
+
+    def disparo (self, i,j):
+        '''Devuelve true si el disparo ha tocado barco o False si ha tocado agua'''
+        if self.tabla_barcos [i][j] == "B":
+            return True
+        else: # puede haber " " o "O" si ya había disparado ahí
+            return False
+    
+    def actualiza_tablero (self, disparo, i, j): 
+        '''Qué barcos me han tocado'''
+        if (disparo):
+            self.tabla_barcos [i][j] = "X"
+            print (f"Tocado en la posición fila: {i}, columna {j}")
+        else:
+            self.tabla_barcos [i][j] = "O"
+            print ("Agua")
+
+    def registra_disparo (self, disparo, i, j):
+        ''' Para ver dónde voy disparando'''
+        if (disparo):
+            self.tabla_disparos [i][j] = "X"
+        else:
+            self.tabla_disparos [i][j] = "O"
+    
+    def es_fin_partida (self):
+        for fila in self.tabla_barcos:
+            if "B" in fila:
+                return False
+        return True 
     def coloca_barcos_manual (self):
         # Función de prueba para comprobar que se acaba el juego rápido
         self.tabla_barcos[1][0] = "B"
@@ -97,53 +147,4 @@ class Tablero:
             ):
                 return True
         else:
-            return False   
-    def imprime_tablero (self,selecc):
-        #Uso el mismo método para imprimir los dos tableros dependiendo del parámetro
-        # 1 me imprime el estado de mis barcos
-        # 0 (otro) me imprime donde he disparado
-        if selecc == 1:
-            tablero = self.tabla_barcos
-        else:
-            tablero = self.tabla_disparos
-
-        #os.system('cls')
-
-        # Printa tb una fila de 0 al 9 arriba y el 0 a 9 al principio de la columna para facilitar a donde
-        # disparar
-        print ("   0   1   2   3   4   5   6   7   8   9 ")
-        for i in range (len(tablero)):
-            print (i, end=" ")
-            for j in range (len (tablero[i])):
-                print (f"[{tablero[i][j]}]", end= " ") 
-            print() 
-
-
-    def disparo (self, i,j):
-        '''Devuelve true si el disparo ha tocado barco o False si ha tocado agua'''
-        if self.tabla_barcos [i][j] == "B":
-            return True
-        else: # puede haber " " o "O" si ya había disparado ahí
             return False
-    
-    def actualiza_tablero (self, disparo, i, j): 
-        '''Qué barcos me han tocado'''
-        if (disparo):
-            self.tabla_barcos [i][j] = "X"
-            print (f"Tocado en la posición fila: {i}, columna {j}")
-        else:
-            self.tabla_barcos [i][j] = "O"
-            print ("Agua")
-
-    def registra_disparo (self, disparo, i, j):
-        ''' Para ver dónde voy disparando'''
-        if (disparo):
-            self.tabla_disparos [i][j] = "X"
-        else:
-            self.tabla_disparos [i][j] = "O"
-    
-    def es_fin_partida (self):
-        for fila in self.tabla_barcos:
-            if "B" in fila:
-                return False
-        return True 

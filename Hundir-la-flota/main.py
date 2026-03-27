@@ -14,8 +14,8 @@ tablero_PC = clases.Tablero ("PC",TAMANIO,LISTA_BARCOS)
 tablero_jugador.inicializa_tableros()
 tablero_PC.inicializa_tableros()
 tablero_jugador.coloca_barcos_random()
-#tablero_PC.coloca_barcos_manual() #para comprobar rápido que acaba la partida
-tablero_PC.coloca_barcos_random()
+tablero_PC.coloca_barcos_manual() #para comprobar rápido que acaba la partida
+#tablero_PC.coloca_barcos_random()
 print(figlet_format("HUNDIR LA FLOTA"))
 print ("¡Bienvenido a hundir la flota!")
 print ("El primer jugador que consiga hundir todos los barcos del oponente ganará el juego")
