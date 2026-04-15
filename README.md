@@ -8,13 +8,23 @@ El objetivo es aplicar los conocimientos adquiridos en programación, análisis 
 
 ## 📚 Proyectos
 
-### 🛳️ Hundir la Flota 
+### 🛳️ Hundir la Flota
 
 Juego clásico desarrollado en Python donde el usuario compite contra la máquina.
 
 * 🔧 Tecnologías: Python
 * 🎯 Conceptos: lógica de programación, estructuras de datos, control de flujo
 * 📁 Carpeta: `Hundir-la-flota`
+
+---
+
+### 📊 EDA (Exploratory Data Analysis)
+
+Proyecto de análisis exploratorio de datos enfocado en comprender un dataset, limpiar la información y extraer insights relevantes mediante visualización y análisis.
+
+* 🔧 Tecnologías: Python, Pandas, NumPy, Matplotlib, Seaborn
+* 🎯 Conceptos: limpieza de datos, análisis exploratorio, visualización, detección de patrones
+* 📁 Carpeta: `EDA`
 
 ---
 
@@ -27,7 +37,9 @@ Documentar mi progreso, mostrando la evolución de mis habilidades y los conocim
 ## 🧠 Tecnologías utilizadas
 
 * Python 🐍
-* (Próximamente: Pandas, NumPy, Machine Learning…)
+* Pandas
+* NumPy
+* (Próximamente:Machine Learning…)
 
 ---
 
