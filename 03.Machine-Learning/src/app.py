@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 import random
 from datetime import date
-from features import (forma_reciente, winrate, headtohead, experiencia,
+from utils.features import (forma_reciente, winrate, headtohead, experiencia,
                       get_ranking, get_elo)
 
 # ─── Configuración de la página ───────────────────────────────────────────────
@@ -148,7 +148,7 @@ st.markdown("""
         font-size: 0.88rem;
     }
     .partido-ganadora { color: #f0f0f0; font-weight: 500; }
-    .partido-perdedora { color: #555; }
+    .partido-perdedora { color: #999696; }
     .partido-prob {
         font-family: 'Bebas Neue', sans-serif;
         font-size: 1.15rem;
@@ -208,7 +208,7 @@ st.markdown("""
         font-weight: 600;
     }
     .bracket-cell.perdedora {
-        color: #555;
+        color: #999696;
         border-color: #222;
     }
     .bracket-match {
@@ -399,28 +399,20 @@ def simulacion_montecarlo(cache_features, cacheh2h, cuadro, modelo, n_simulacion
 # ─── Cargar datos, modelo y cuadro del torneo ─────────────────────────────────────────────────────
 @st.cache_resource
 def cargar_modelo():
-    with open('gbx_v3.model', 'rb') as f:
+    with open('model/production/gbx_v3.model', 'rb') as f:
         return pickle.load(f)
 
 @st.cache_data
 def cargar_wta():
-    return pd.read_csv('wta_limpio.csv', low_memory=False, parse_dates=['Date'])
-#@st.cache_data
-# def cargar_wta():
-#     wta = pd.read_csv('wta_limpio.csv', low_memory=False)
-#     wta['Date'] = pd.to_datetime(wta['Date'], errors='coerce')
-#     wta = wta.dropna(subset=['Date'])
-#     return wta
-
-# wta = cargar_wta()
+    return pd.read_csv('data/wta_limpio.csv', low_memory=False, parse_dates=['Date'])
 
 @st.cache_data
 def cargar_historico():
-    return pd.read_csv('historico_partidos.csv', parse_dates=['date'])
+    return pd.read_csv('data/historico_partidos.csv', parse_dates=['date'])
 
 @st.cache_resource
 def cargar_cache_torneo(wta):
-    with open("cuadro_python_list.txt", "r", encoding="utf-8") as f:
+    with open("utils/cuadro_python_list.txt", "r", encoding="utf-8") as f:
         codigo = f.read()
     local_vars = {}
     exec(codigo, {}, local_vars)
@@ -443,7 +435,7 @@ def jugadoras_activas(df):
     # Recuperar nombres originales desde el histórico usando match_id
     # Cargamos wta para sacar nombres
     try:
-        wta = pd.read_csv('wta_limpio.csv', low_memory=False)
+        wta = pd.read_csv('data/wta_limpio.csv', low_memory=False)
         ids_recientes = recientes['match_id'].values
         jugadoras = pd.concat([
             wta.loc[wta.index.isin(ids_recientes), 'Player_1'],
