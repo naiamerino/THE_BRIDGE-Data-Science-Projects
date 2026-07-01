@@ -1,6 +1,6 @@
 # 🚀 THE BRIDGE - Data Science Projects
 
-Este repositorio contiene los proyectos que estoy desarrollando durante mi bootcamp de Data Science en The Bridge.
+Este repositorio contiene los proyectos desarrollados durante mi bootcamp de Data Science en The Bridge.
 
 El objetivo es aplicar los conocimientos adquiridos en programación, análisis de datos, machine learning y desarrollo de proyectos prácticos.
 
