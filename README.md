@@ -1,54 +1,29 @@
-# 🚀 THE BRIDGE - Data Science Projects
+# Data Science Portfolio — The Bridge Bootcamp
 
-Este repositorio contiene los proyectos desarrollados durante mi bootcamp de Data Science en The Bridge.
-
-El objetivo es aplicar los conocimientos adquiridos en programación, análisis de datos, machine learning y desarrollo de proyectos prácticos.
+Proyectos desarrollados durante el bootcamp de Data Science & IA en The Bridge (2026).
 
 ---
 
-## 📚 Proyectos
-
-### 🛳️ Hundir la Flota
-
-Juego clásico desarrollado en Python donde el usuario compite contra la máquina.
-
-* 🔧 Tecnologías: Python
-* 🎯 Conceptos: lógica de programación, estructuras de datos, control de flujo
-* 📁 Carpeta: `Hundir-la-flota`
+## 🎾 WTA Match Predictor
+Predictor de partidos WTA y simulador de torneos mediante Monte Carlo.
+Modelos de clasificación (XGBoost) entrenados sobre datos históricos 2007–2026
+con feature engineering basado en ELO, superficie y estadísticas de partido.
+App interactiva desarrollada con Streamlit.
+`📁 01.WTA-Match-Predictor`
 
 ---
 
-### 📊 EDA (Exploratory Data Analysis)
-
-Proyecto de análisis exploratorio de datos enfocado en comprender un dataset, limpiar la información y extraer insights relevantes mediante visualización y análisis.
-
-* 🔧 Tecnologías: Python, Pandas, NumPy, Matplotlib, Seaborn
-* 🎯 Conceptos: limpieza de datos, análisis exploratorio, visualización, detección de patrones
-* 📁 Carpeta: `EDA`
+## 🗺️ Aupa — Recomendador turístico del País Vasco
+Sistema de recomendación turística basado en RAG y recuperación semántica con FAISS.
+Segmentación de usuarios mediante KMeans (3 arquetipos).
+`📁 02.Aupa`
 
 ---
 
-### 🤖 Machine Learning — WTA Match Predictor  
+## 📚 Otros ejercicios
+Ejercicios y prácticas desarrollados a lo largo del bootcamp.
 
-Proyecto de Machine Learning enfocado en la predicción de partidos del circuito WTA mediante modelos de clasificación y simulaciones Monte Carlo. El sistema estima probabilidades de victoria entre jugadoras a partir de estadísticas históricas, rankings y ratings ELO, e incluye una aplicación interactiva en Streamlit para predecir partidos y simular torneos completos.
+- **EDA** — Análisis exploratorio de datos: limpieza, visualización y extracción de insights.
+- **Hundir la Flota** — Implementación del juego clásico en Python.
 
-🔧 Tecnologías: Python, Pandas, NumPy, Scikit-learn, XGBoost, Streamlit  
-🎯 Conceptos: feature engineering, clasificación, ELO rating, pipelines, validación temporal, simulación Monte Carlo  
-📁 Carpeta: 03.Machine-Learning
-
-## 🎯 Objetivo del repositorio
-
-Documentar mi progreso, mostrando la evolución de mis habilidades y los conocimientos adquiridos en el bootcamp a través de proyectos prácticos.
-
----
-
-## 📌 Estado
-
-🚧 En construcción — iré añadiendo más proyectos a medida que avance en el bootcamp.
-
----
-
-## 👩‍💻 Autor
-
-Naia Merino
-[GitHub](https://github.com/naiamerino)
+`📁 03.Otros-ejercicios`
